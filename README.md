@@ -33,6 +33,8 @@ Distrust 就诞生在这个背景下：它能监控并篡改那些尚未更新�
 
 ## 预览
 
+> 图中 IP、域名、会话均为虚构，仅用于演示功能界面。
+
 | 总览 | 请求抓包 |
 |---|---|
 | ![总览](assets/admin-overview.png) | ![请求抓包](assets/admin-flows.png) |
