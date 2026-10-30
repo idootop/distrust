@@ -1,0 +1,50 @@
+.DS_Store
+*.log
+
+# Android / Gradle
+.gradle/
+build/
+android/build/
+local.properties
+
+# Web（控制台）
+packages/admin/node_modules/
+packages/admin/dist/
+packages/admin/tsconfig.tsbuildinfo
+
+# Web（飞书客户端）
+packages/lark/node_modules/
+packages/lark/.next/
+packages/lark/.data/
+packages/lark/next-env.d.ts
+
+# Local
+tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# 飞书凭据（可能含个人数据，禁止提交）
+cookie.txt
+cookies.txt
+*.har
+
+# 飞书客户端凭证（本地）
+packages/lark/.env.local
+packages/lark/.env*.local
+packages/lark/**/cookie*.txt
+packages/lark/**/session*.txt
+packages/lark/**/wsurl.txt
+
+# feishu web
+node_modules
+packages/feishu/web/dist
+packages/feishu/pkg/webdist/dist
+.backup/
