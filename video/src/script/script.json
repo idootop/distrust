@@ -1,0 +1,338 @@
+{
+  "meta": {
+    "title": "信任的裂缝",
+    "subtitle": "8 个数字，干翻 HTTPS",
+    "series": "Distrust · 安全科普",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "date": "2026-10"
+  },
+  "defaults": {
+    "voice": "narrator",
+    "pre": 0.1,
+    "pauseAfter": 0.16
+  },
+  "voices": {
+    "narrator": {
+      "engine": "edge",
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "+16%",
+      "pitch": "+2Hz",
+      "volume": "+0%"
+    },
+    "attacker": {
+      "engine": "edge",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "+4%",
+      "pitch": "-3Hz",
+      "volume": "+0%"
+    }
+  },
+  "chapters": [
+    {
+      "id": "hook",
+      "tag": "PROLOGUE",
+      "index": "00",
+      "title": "隔桌有眼",
+      "subtitle": "同一杯咖啡，同一句话，另一双眼睛",
+      "mood": "mystery",
+      "leadIn": 0.5,
+      "tail": 0.8,
+      "beats": [
+        {
+          "id": "h1",
+          "text": "这句话，你没发给第二个人。",
+          "pauseAfter": 0.35
+        },
+        {
+          "id": "h2",
+          "text": "但隔壁桌的人，已经看到了。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "h3",
+          "text": "同一个无线网络下，不用碰你的电脑，也不用你点任何东西。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "h4",
+          "text": "2026 年 10 月，一把用了十年的网络锁，被人发现——钥匙一直插在锁上。",
+          "pauseAfter": 0.6
+        }
+      ]
+    },
+    {
+      "id": "cert",
+      "tag": "0x01",
+      "index": "01",
+      "title": "小锁、身份证、章",
+      "subtitle": "浏览器认的不是你，是章",
+      "mood": "curiosity",
+      "leadIn": 0.5,
+      "tail": 0.8,
+      "beats": [
+        {
+          "id": "c1",
+          "text": "你每天在浏览器看到的那把小锁，其实是浏览器在说：我验过它的身份证。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "c2",
+          "text": "身份证，就是证书。发证的，叫 CA。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "c3",
+          "text": "CA 盖个章，浏览器就认。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "c4",
+          "text": "如果这个章，被偷了呢？",
+          "pauseAfter": 0.45
+        },
+        {
+          "id": "c5",
+          "text": "出事的，是印度 CA 机构 eMudhra 的 8 张中间证书。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "c6",
+          "text": "中间证书，相当于 CA 的分包商。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "c7",
+          "text": "这 8 张证书的私钥，本该是一个 384 位的随机数。",
+          "pauseAfter": 0.35
+        },
+        {
+          "id": "c8",
+          "text": "实际只有 8 位。几毫秒，就能试完。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c9",
+          "text": "这 8 张证书，能签任何域名，包括你的银行网站。",
+          "pauseAfter": 0.5
+        }
+      ]
+    },
+    {
+      "id": "response",
+      "tag": "0x02",
+      "index": "02",
+      "title": "一百分钟",
+      "subtitle": "浏览器封得有多快",
+      "mood": "relief",
+      "leadIn": 0.45,
+      "tail": 0.7,
+      "beats": [
+        {
+          "id": "s1",
+          "text": "10 月 17 日，研究者公开了私钥签名。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "s2",
+          "text": "Chrome 在 100 分钟内，拉黑了这 8 张证书。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "s3",
+          "text": "Firefox 在 3 小时后跟进。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "s4",
+          "text": "第二天，eMudhra 正式吊销。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "s5",
+          "text": "这可能是互联网史上最快的一次证书响应。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "s6",
+          "text": "浏览器全绿。安全了？",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "s7",
+          "text": "真的吗？",
+          "pauseAfter": 1.2
+        }
+      ]
+    },
+    {
+      "id": "blind",
+      "tag": "0x03",
+      "index": "03",
+      "title": "关不上的窗",
+      "subtitle": "吊销是一张通缉令，可有人不看",
+      "mood": "tension",
+      "leadIn": 0.5,
+      "tail": 0.7,
+      "beats": [
+        {
+          "id": "b1",
+          "text": "吊销，只是一张通缉令。有些客户端，根本不看。",
+          "pauseAfter": 0.35
+        },
+        {
+          "id": "b2",
+          "text": "macOS 自带的 curl、git、python3，只认根证书，不查吊销。",
+          "pauseAfter": 0.35
+        },
+        {
+          "id": "b3",
+          "text": "各种开发工具、运行时、桌面客户端，各带一份信任库。系统更新，它们不会变。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "b4",
+          "text": "飞书、办公软件、各种智能助手，也在等更新。",
+          "pauseAfter": 0.35
+        },
+        {
+          "id": "b5",
+          "text": "前门锁了，窗户还开着。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "b6",
+          "text": "一扇窗没关，整栋房子都漏风。",
+          "pauseAfter": 0.45
+        }
+      ]
+    },
+    {
+      "id": "demo",
+      "tag": "0x04",
+      "index": "04",
+      "title": "透明局域网",
+      "subtitle": "只要一台手机，连上同一个热点",
+      "mood": "demo",
+      "leadIn": 0.5,
+      "tail": 0.7,
+      "beats": [
+        {
+          "id": "d1",
+          "text": "为了证明，我做了个工具：Distrust。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "d2",
+          "text": "一台电脑，一部手机，连同一个热点。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "d3",
+          "text": "手机冒充网关，流量拐进手机。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "d7",
+          "text": "聊天记录，一条一条出现在另一块屏幕上。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "d8",
+          "text": "还能篡改。替你给老板发一句——",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "d8b",
+          "text": "老子不干了。",
+          "voice": "attacker",
+          "pauseAfter": 0.9
+        },
+        {
+          "id": "d9",
+          "text": "而你的屏幕，一切正常。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "d10",
+          "text": "这还只是其中一个应用。同一个口子，还能干别的。",
+          "pauseAfter": 0.6
+        }
+      ]
+    },
+    {
+      "id": "risk",
+      "tag": "0x05",
+      "index": "05",
+      "title": "不止聊天",
+      "subtitle": "同一个口子，能干的事还有很多",
+      "mood": "danger",
+      "leadIn": 0.5,
+      "tail": 0.6,
+      "beats": [
+        {
+          "id": "x2",
+          "text": "你让智能助手写代码，它可能替你执行一条删库命令。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "x3",
+          "text": "你连的免费节点，可能正在偷看你的密码。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "x4",
+          "text": "你的银行凭证，可能正躺在别人屏幕上。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "x5",
+          "text": "一个没更新的客户端，就够了。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "x6",
+          "text": "你以为的安全，只是因为还没人对你出手。",
+          "pauseAfter": 0.5
+        }
+      ]
+    },
+    {
+      "id": "fix",
+      "tag": "0x06",
+      "index": "06",
+      "title": "现在，去更新",
+      "subtitle": "保持更新，别连陌生热点",
+      "mood": "resolve",
+      "leadIn": 0.5,
+      "tail": 1.2,
+      "beats": [
+        {
+          "id": "f1",
+          "text": "记住两件事。",
+          "pauseAfter": 0.3
+        },
+        {
+          "id": "f2",
+          "text": "第一，保持更新。系统、浏览器、旧软件，一个都别漏。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "f3",
+          "text": "第二，别连陌生热点，尤其别登录账号。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "f4",
+          "text": "现在，去更新。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "f_end",
+          "hold": 5.5
+        }
+      ]
+    }
+  ]
+}

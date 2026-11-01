@@ -1,0 +1,513 @@
+{
+  "meta": {
+    "title": "信任的裂缝",
+    "subtitle": "8 个数字，如何让整个局域网裸奔",
+    "series": "Distrust · 安全科普",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "date": "2026-10"
+  },
+  "defaults": {
+    "voice": "narrator",
+    "pre": 0.25,
+    "pauseAfter": 0.55
+  },
+  "voices": {
+    "narrator": {
+      "engine": "edge",
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "-5%",
+      "pitch": "-2Hz",
+      "volume": "+0%"
+    },
+    "inject": {
+      "engine": "edge",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-3%",
+      "pitch": "-1Hz",
+      "volume": "+0%"
+    }
+  },
+  "chapters": [
+    {
+      "id": "prologue",
+      "tag": "PROLOGUE",
+      "index": "00",
+      "title": "你以为的安全",
+      "subtitle": "Wi-Fi、飞书，与一把绿色的锁",
+      "mood": "mystery",
+      "leadIn": 1.2,
+      "tail": 1.4,
+      "beats": [
+        {
+          "id": "p1",
+          "text": "先别急着划走。看一眼你屏幕角落的 Wi-Fi 图标。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "p2",
+          "text": "你现在连着的这个网络里，可能有人正在**实时读取**你的飞书消息。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "p3",
+          "text": "不用碰你的电脑，不用装证书，甚至不需要你点一下确认。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "p4",
+          "text": "而你看到的，依然是一把**绿色的锁**。",
+          "pauseAfter": 1.0
+        },
+        {
+          "id": "p5",
+          "text": "2026 年 10 月，一张证书，撕开了 HTTPS 的信任链。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "p_title",
+          "hold": 3.2
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "tag": "0x01",
+      "index": "01",
+      "title": "八把钥匙",
+      "subtitle": "随机性，是密码学的护城河",
+      "mood": "curiosity",
+      "leadIn": 0.8,
+      "tail": 1.2,
+      "beats": [
+        {
+          "id": "c1_b1",
+          "text": "要理解这件事，先花一分钟，搞懂地址栏里那把锁。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c1_b2",
+          "text": "锁代表 HTTPS。它保证通信被加密，但它更重要的任务，是确认对面到底是谁。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c1_b3",
+          "text": "网站出示证书，CA 用自己的私钥盖章，浏览器用公钥验章。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c1_b4",
+          "text": "浏览器只内置几十个根证书。根签中间，中间签网站，一层一层，直到你访问的域名。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c1_b5",
+          "text": "这条链上任何一环的私钥泄露，攻击者就能签出一张**以假乱真**的证书。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c1_b6",
+          "text": "而私钥的安全性，全靠一个东西：随机性。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c1_b7",
+          "text": "eMudhra 是印度的一家 CA。它旗下的 emSign，签发了 8 张中间 CA 证书。",
+          "speak": "伊姆德拉是印度的一家 CA。它旗下的 emSign，签发了八张中间 CA 证书。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c1_b8",
+          "text": "P-384，一种常见的椭圆曲线算法。一个私钥，本该是 384 位的随机数。可能的取值，有 2 的 384 次方种。",
+          "speak": "P 三八四，一种常见的椭圆曲线算法。一个私钥，本该是三八四位的随机数。可能的取值，有二的三八四次方种。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c1_b9",
+          "text": "大约是 10 的 115 次方。整个可观测宇宙的原子数，才 10 的 80 次方。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c1_b10",
+          "text": "把全宇宙的原子都变成计算机，从宇宙大爆炸算到今天，也猜不完。",
+          "pauseAfter": 0.9
+        },
+        {
+          "id": "c1_b11",
+          "text": "但这 8 把私钥，实际长这样。",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "c1_b12",
+          "text": "4、56、66、115、155、156、230、237。",
+          "pauseAfter": 1.0
+        },
+        {
+          "id": "c1_b13",
+          "text": "不是 384 位。是个位数、两位数。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c1_b14",
+          "text": "攻击者不用破解。他只要拿公开证书，把不到 256 种可能，挨个试一遍。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c1_b15",
+          "text": "随机性，是密码学的护城河。这一次，护城河里只有 8 个水坑。",
+          "pauseAfter": 1.1
+        },
+        {
+          "id": "c1_b16",
+          "text": "eMudhra 说，2025 年 4 月的一次密钥生成仪式上，为了测试密钥包装，走了一个特批流程。",
+          "speak": "伊姆德拉说，二零二五年四月的一次密钥生成仪式上，为了测试密钥包装，走了一个特批流程。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c1_b17",
+          "text": "代码有缺陷，多生成了一对弱密钥。两个标签名字太像，这对测试密钥，被误拿去生成了正式证书。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c1_b18",
+          "text": "一个标签写错，八张证书沦陷。",
+          "pauseAfter": 1.2
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "tag": "0x02",
+      "index": "02",
+      "title": "一百分钟",
+      "subtitle": "浏览器跑赢了时间，然后呢？",
+      "mood": "relief",
+      "leadIn": 0.8,
+      "tail": 1.2,
+      "beats": [
+        {
+          "id": "c2_b1",
+          "text": "10 月 17 日，研究者 Wayne 用这 8 个私钥各签了一条消息，连同证书和签名，交给各大根证书计划。",
+          "speak": "十月十七日，研究者韦恩，用这八把私钥各签了一条消息，连同证书和签名，交给各大根证书计划。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c2_b2",
+          "text": "接下来的一百分钟，是互联网历史上最快的响应之一。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c2_b3",
+          "text": "18:05，Chrome 收到报告。19:45，CRLSet 封禁 6 张 TLS 中间证书的公钥哈希。用户不用重启浏览器。",
+          "speak": "十八点零五分，Chrome 收到报告。十九点四十五分，CRL set 封禁六张 TLS 中间证书的公钥哈希。用户不用重启浏览器。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c2_b4",
+          "text": "三个小时后，Mozilla 完成 OneCRL 封禁。第二天，eMudhra 吊销 8 张证书。",
+          "speak": "三个小时后，Mozilla 完成 One C R L 封禁。第二天，伊姆德拉吊销八张证书。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c2_b5",
+          "text": "10 月 19 日，Sectigo 吊销 8 张交叉签名证书，合计 16 张。随后几天，Go、微软、苹果陆续完成封禁。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c2_b6",
+          "text": "打开检测网站，一排绿色的对勾亮起：Did not connect。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c2_b7",
+          "text": "浏览器，安全了。",
+          "pauseAfter": 1.8
+        },
+        {
+          "id": "c2_b8",
+          "text": "真的吗？",
+          "pauseAfter": 2.4
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "tag": "0x03",
+      "index": "03",
+      "title": "我们真的安全了吗",
+      "subtitle": "吊销，只在会去查的人那里生效",
+      "mood": "tension",
+      "leadIn": 0.6,
+      "tail": 1.0,
+      "beats": [
+        {
+          "id": "c3_b1",
+          "text": "证书吊销，不是把证书从互联网上删掉。它更像一张通缉令：证书还在，但所有守规矩的客户端，都应该拒绝它。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c3_b2",
+          "text": "问题是，客户端得主动去看这张通缉令。浏览器会看。macOS 自带的 curl、git、python3，不会。",
+          "speak": "问题是，客户端得主动去看这张通缉令。浏览器会看。macOS 自带的 curl、git、python 三，不会。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c3_b3",
+          "text": "它们只检查系统里那本根证书账本。只要证书链能连到账本上的根，就一路放行。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c3_b4",
+          "text": "而这本账本，要等苹果下一次系统更新才会换。macOS 27.2，curl 依然是旧的。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c3_b5",
+          "text": "更麻烦的是，很多工具根本不看系统的账本。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c3_b6",
+          "text": "Go 把信任库编进了二进制；Python 的 certifi、Rust 的 webpki-roots、Node.js、Java、NSS，各有各的副本。",
+          "speak": "Go 把信任库编进了二进制；Python 的 certifi、Rust 的 web P K I roots、Node 点 J S、Java、N S S，各有各的副本。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c3_b7",
+          "text": "系统升级了，它们不会自动变。你必须重新编译，或者升级依赖，才能把新的信任库带进去。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c3_b8",
+          "text": "还有 Electron。Slack、Discord、飞书、各种桌面 AI 客户端，底层都打包着一份 Chromium 和它的信任库。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c3_b9",
+          "text": "上游不发版，你就只能等。再加上旧容器、旧安装包、嵌入式设备和 IoT……",
+          "speak": "上游不发版，你就只能等。再加上旧容器、旧安装包、嵌入式设备和 I O T……",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c3_b10",
+          "text": "浏览器换了锁。但你系统里，还有无数扇窗户，开着。",
+          "pauseAfter": 1.0
+        },
+        {
+          "id": "c3_b11",
+          "text": "安全有一个很残酷的性质：它不是百分比，它是布尔值。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c3_b12",
+          "text": "99% 的防线，加上 1% 的旧组件，等于 0。",
+          "pauseAfter": 1.2
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "tag": "0x04",
+      "index": "04",
+      "title": "透明局域网",
+      "subtitle": "目标设备，完全无感",
+      "mood": "demo",
+      "leadIn": 0.6,
+      "tail": 1.0,
+      "beats": [
+        {
+          "id": "c4_b1",
+          "text": "为了说明这件事到底有多具体，我做了一个工具，叫 Distrust。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c4_b2",
+          "text": "它不破解私钥，也不入侵设备。它只做一件事：证明旧应用的 HTTPS，在同一个局域网里，有多透明。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c4_b3",
+          "text": "一台 Mac，一部手机，一个路由器。手机连着同一个 Wi-Fi。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c4_b4",
+          "text": "第一步，ARP 劫持。手机对 Mac 说：我就是网关。于是 Mac 发出的流量，先经过手机。",
+          "speak": "第一步，A R P 劫持。手机对 Mac 说：我就是网关。于是 Mac 发出的流量，先经过手机。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c4_b5",
+          "text": "第二步，拦截 HTTPS。正常情况下，手机会卡在 TLS 握手：它没有目标网站的私钥，解不开。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c4_b6",
+          "text": "但这一次，它有。它用那 8 张中间证书的私钥，现场签一张 feishu.cn 的证书。",
+          "speak": "但这一次，它有。它用那八张中间证书的私钥，现场签一张飞书点 CN 的证书。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c4_b7",
+          "text": "Mac 上的旧客户端一看：根证书我认识，中间证书我信任，签名有效。握手通过。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c4_b8",
+          "text": "不需要装证书，不需要设代理，不需要点确认。目标设备，完全无感。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c4_b9",
+          "text": "接下来看到的，就是飞书的聊天记录。",
+          "pauseAfter": 0.5
+        },
+        {
+          "id": "c4_b10",
+          "text": "实时消息、历史消息、图片、群聊。控制台上，一条一条地滚出来。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c4_b11",
+          "text": "还能改写。老板问你：方案什么时候好？",
+          "pauseAfter": 0.4
+        },
+        {
+          "id": "c4_b11b",
+          "text": "已经发您了。",
+          "voice": "inject",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c4_b11c",
+          "text": "这句话，是你发的吗？不，是 Distrust 替你发的。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c4_b12",
+          "text": "而你，根本不知道。",
+          "pauseAfter": 1.1
+        },
+        {
+          "id": "c4_b13",
+          "text": "这还只是飞书。只是聊天记录。",
+          "pauseAfter": 0.8
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "tag": "0x05",
+      "index": "05",
+      "title": "不止聊天",
+      "subtitle": "当旧组件成为最完美的突破口",
+      "mood": "danger",
+      "leadIn": 0.5,
+      "tail": 0.9,
+      "beats": [
+        {
+          "id": "c5_b1",
+          "text": "把场景换一下，后果会更糟。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c5_b2",
+          "text": "你在用 AI 编程助手，它能自动执行工具调用。中间人可以在返回结果里，塞一条恶意 Shell 命令。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c5_b3",
+          "text": "删库、植入后门、偷 API Key，只需要一瞬间。",
+          "speak": "删库、植入后门、偷 A P I key，只需要一瞬间。",
+          "pauseAfter": 1.0
+        },
+        {
+          "id": "c5_b4",
+          "text": "你连的机场节点，如果节点是恶意的，所有经过它的加密流量，都可能被解开。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c5_b5",
+          "text": "银行校验、交易所 API、登录 Token……在没更新的客户端面前，都是透明的。",
+          "speak": "银行校验、交易所 A P I、登录 token……在没更新的客户端面前，都是透明的。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c5_b6",
+          "text": "你以为的安全，只是因为还没人对你出手。",
+          "pauseAfter": 1.4
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "tag": "0x06",
+      "index": "06",
+      "title": "现在，去更新",
+      "subtitle": "最落后的那一环，决定了你全部的安全",
+      "mood": "resolve",
+      "leadIn": 0.7,
+      "tail": 2.0,
+      "beats": [
+        {
+          "id": "c6_b1",
+          "text": "那怎么办？不是卸载 HTTPS，也不是永远别连 Wi-Fi。是把你信任链上的每一环，都更新到最新。",
+          "pauseAfter": 0.7
+        },
+        {
+          "id": "c6_b2",
+          "text": "第一，更新系统和浏览器。但注意，macOS 27.2 依然没有更新 curl。需要的话，按披露页的教程手动换掉。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c6_b3",
+          "text": "第二，更新工具链，并且重新构建。Go、Python、Rust、Node.js，还有 Electron，都有对应的修复版本。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c6_b4",
+          "text": "第三，清理那些不会自己更新的东西：旧容器、旧安装包、停更的软件、IoT 设备。",
+          "speak": "第三，清理那些不会自己更新的东西：旧容器、旧安装包、停更的软件、I O T 设备。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c6_b5",
+          "text": "第四，别关掉 CRL、OCSP、证书固定和 CT 监控。它们不是兼容性负担，它们是报警器。",
+          "speak": "第四，别关掉 CRL、O C S P、证书固定和 C T 监控。它们不是兼容性负担，它们是报警器。",
+          "pauseAfter": 0.6
+        },
+        {
+          "id": "c6_b6",
+          "text": "第五，在不可信的网络里，别做敏感操作。局域网里任何一台能 ARP 劫持的设备，都可能是下一个中间人。",
+          "speak": "第五，在不可信的网络里，别做敏感操作。局域网里任何一台能 A R P 劫持的设备，都可能是下一个中间人。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c6_b7",
+          "text": "信任不是一道门，是一条链。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c6_b8",
+          "text": "而一条链的强度，永远取决于最落后的那一环。",
+          "pauseAfter": 1.0
+        },
+        {
+          "id": "c6_b9",
+          "text": "现在，去更新。",
+          "pauseAfter": 1.4
+        },
+        {
+          "id": "c6_b10",
+          "text": "别等出事，才想起那台三年没重启的电脑。",
+          "pauseAfter": 0.8
+        },
+        {
+          "id": "c6_end",
+          "hold": 7.5
+        }
+      ]
+    }
+  ]
+}

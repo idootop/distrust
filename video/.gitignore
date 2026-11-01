@@ -1,0 +1,9 @@
+node_modules/
+build/
+snaps/
+.venv/
+.cache/
+public/audio/master.wav
+public/audio/voice_raw.wav
+public/audio/vo/
+dist/

@@ -1,0 +1,32 @@
+{
+  "name": "distrust-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "《信任的裂缝》— Distrust 科普视频动画舞台",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "tts": ".venv/bin/python scripts/tts.py",
+    "timeline": ".venv/bin/python scripts/tts.py --timeline-only",
+    "audio": ".venv/bin/python scripts/build_audio.py",
+    "snap": "node scripts/snap.mjs",
+    "render": "node scripts/render.mjs"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^14.9.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "puppeteer-core": "^25.16.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  },
+  "packageManager": "pnpm@12.16.1"
+}
